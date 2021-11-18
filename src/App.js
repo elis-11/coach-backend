@@ -10,7 +10,7 @@ function App() {
 	const [ formUsername, setFormUsername ] = useState('');
 	const [ formEmail, setFormEmail ] = useState('');
 
-	const backendUrl = 'http://localhost:3016';
+	const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 	const loadUsers = async () => {
 		const response = await fetch(backendUrl);
