@@ -5,10 +5,11 @@
 	</h2>
 	<p>This page displays all the speakers at the conference.</p>
 	<ul>
-		<% speakers.forEach(speaker => { %>
-			<li><%=speaker.name %> <b>from:</b> <%=speaker.country %>.</li>
+		<% sponsors.forEach(sponsor => { %>
+			<li><%=sponsor.name %> from  <%=sponsors.location %>.</li>
 		<% }) %>
 	</ul>
-
 	<%- include('_footer.ejs')
 		%>
+
+		
