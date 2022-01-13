@@ -25,7 +25,7 @@ const Register = () => {
   return (
     <div>
       <h1>Register a new account</h1>
-      <form submit={register}>
+      <form onSubmit={register}>
         <input
           type="email"
           placeholder="Email"
