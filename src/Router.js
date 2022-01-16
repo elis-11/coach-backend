@@ -1,9 +1,15 @@
+// import React, { useContext } from "react";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+// import Customers from "./components/customers/Customers";
 import Navbar from "./components/layout/Navbar";
+// import AuthContext from "./context/AuthContext";
 
-const Router = () => {
+function Router() {
+  // const { loggedIn } = useContext(AuthContext);
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -11,18 +17,30 @@ const Router = () => {
         <Route exact path="/">
           <div>Home</div>
         </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/login">
-          <div>Login</div>
-        </Route>
-        <Route path="/" customer>
+        {/* {loggedIn === false && (
+          <> */}
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          {/* </>
+        // )}
+        // {loggedIn === true && (
+        //   <> */}
+            {/* <Route path="/customer">
+              <Customers />
+            </Route> */}
+                    <Route path="/customer">
           <div>Customers</div>
         </Route>
+
+        {/* //   </>
+        // )} */}
       </Switch>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;
