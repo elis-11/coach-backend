@@ -2,14 +2,15 @@ import React from "react";
 import "./App.scss";
 import Router from "./Router";
 import axios from "axios";
+import { AuthContextProvider } from "./context/AuthContext";
 
 axios.defaults.withCredentials = true;
 
 const App = () => {
   return (
-    <div className="App">
+    <AuthContextProvider>
       <Router />
-    </div>
+    </AuthContextProvider>
   );
 };
 

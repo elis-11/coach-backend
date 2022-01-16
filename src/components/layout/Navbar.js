@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
+  const { loggedIn } = useContext(AuthContext);
+
   return (
     <div>
       <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/login">Log in</Link>
-      <Link to="/customer">Customers</Link>
+      {!loggedIn && (
+        <>
+          <Link to="/register">Register</Link>
+          <Link to="/login">Log in</Link>
+        </>
+      )}
+      {loggedIn && <Link to="/customer">Customers</Link>}
     </div>
   );
 };
