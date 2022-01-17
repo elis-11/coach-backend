@@ -8,13 +8,13 @@ const Navbar = () => {
   return (
     <div>
       <Link to="/">Home</Link>
-      {!loggedIn && (
+      {loggedIn === false && (
         <>
           <Link to="/register">Register</Link>
           <Link to="/login">Log in</Link>
         </>
       )}
-      {loggedIn && <Link to="/customer">Customers</Link>}
+      {loggedIn === true && <Link to="/customer">Customers</Link>}
     </div>
   );
 };
