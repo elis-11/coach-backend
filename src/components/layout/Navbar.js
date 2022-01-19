@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import LogOutBtn from "../auth/LogOutBtn";
 
-const Navbar = () => {
+function Navbar() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
@@ -23,6 +23,6 @@ const Navbar = () => {
       )}
     </div>
   );
-};
+}
 
 export default Navbar;
