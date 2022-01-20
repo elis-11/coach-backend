@@ -21,11 +21,8 @@ const Register = () => {
         passwordVerify,
       };
 
-      await axios.post("http://localhost:5000/auth/", registerData);
-      // await axios.post(
-      //   "https://mern-auth-template.herokuapp.com/auth/",
-      //   registerData
-      // );
+      // await axios.post("http://localhost:5000/auth/", registerData);
+      await axios.post("https://mern-auth-bk.herokuapp.com/auth/", registerData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {
