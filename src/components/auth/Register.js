@@ -1,7 +1,8 @@
-import axios  from "axios";
+import axios from "axios";
 import React, { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
+import "../../App.scss";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +23,10 @@ const Register = () => {
       };
 
       // await axios.post("http://localhost:5000/auth/", registerData);
-      await axios.post("https://mern-auth-bk.herokuapp.com/auth/", registerData);
+      await axios.post(
+        "https://mern-auth-bk.herokuapp.com/auth/",
+        registerData
+      );
       await getLoggedIn();
       history.push("/");
     } catch (err) {
@@ -31,31 +35,36 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div className="register">
       <h1>Register a new account</h1>
       <form onSubmit={register}>
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-
-        <input
-          type="password"
-          placeholder="Verify your password"
-          onChange={(e) => setPasswordVerify(e.target.value)}
-          value={passwordVerify}
-        />
-
-        <button type="submit">Register</button>
+        <div className="form">
+          <input
+            type="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div className="form">
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </div>
+        <div className="form">
+          <input
+            type="password"
+            placeholder="Verify your password"
+            onChange={(e) => setPasswordVerify(e.target.value)}
+            value={passwordVerify}
+          />
+        </div>
+        <div className="form">
+          <button type="submit">Register</button>
+        </div>
       </form>
     </div>
   );
