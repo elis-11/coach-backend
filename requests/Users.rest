@@ -1,0 +1,51 @@
+@url=http://localhost:5005
+
+### get all users
+GET {{ url}}/users
+Content-Type: application/json
+
+### get simple user
+GET {{ url }}/users/
+Content-Type: application/json
+
+### create user
+POST {{ url }}/users
+Content-Type: application/json
+
+{
+    "name": "Julian",
+    "hobby": "reading",
+    "email": "julian@gmail.com",
+    "city": "San Francisco"
+}
+
+### delete user
+DELETE {{ url }}/users/6277e03489ef5f351663546b
+Content-Type: application/json
+
+### edit user
+PATCH {{ url }}/users/6277dfc289ef5f351663545f
+Content-Type: application/json
+
+{
+    "name": "Mali",
+    "hobby": "reading",
+    "email": "mali@gmail.com",
+    "city": "London"
+}
+### edit user
+PATCH {{ url }}/users/6277e03189ef5f3516635467
+Content-Type: application/json
+
+{
+    "name": "Luisa"
+}
+### edit user
+PATCH {{ url }}/users/6277e03389ef5f3516635469
+Content-Type: application/json
+
+{
+    "name": "Milena",
+    "email": "milena@gmail.com",
+    "city": "New York"
+}
